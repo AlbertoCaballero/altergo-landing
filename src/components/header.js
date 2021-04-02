@@ -5,28 +5,58 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#014af9`,
+      paddingLeft: `8em`,
+      paddingRight: `8em`,
+      paddingTop: `0.5em`,
     }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: 1600,
+        height: `100vh`,
+        display: `inline-block`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+          fontFamily: `aldrich`,
+          fontWeight: `bold`,
+        }}
+      >
+        {siteTitle}
+      </Link>
+
+      <ul
+        style={{
+          display: `inline`,
+        }}
+      >
+        {["home", "projects", "articles"].map(item => (
+          <li
+            style={{
+              display: `inline-block`,
+              padding: `1em`,
+              fontWeight: `lighter`,
+            }}
+          >
+            <Link
+              to={item}
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+                fontFamily: `aldrich`,
+              }}
+            >
+              {item}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   </header>
 )
